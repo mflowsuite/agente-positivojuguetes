@@ -55,104 +55,126 @@
     <span class="badge">Chateá con Tali →</span>
   </div>
 
+  <!-- ═══════════════════════════════════════════════════════════════
+       CHATBOT TALI — CONFIGURACIÓN
+       Para retoques menores buscá el comentario correspondiente
+       y cambiá solo el valor entre comillas.
+       Después hacé clic en "Commit changes" y listo.
+  ═══════════════════════════════════════════════════════════════ -->
   <script type="module" defer>
     import Chatbot from "https://cdn.n8nchatui.com/v1/pole-embed-yard.js";
     Chatbot.init({
+
+      // URL del webhook de n8n — NO tocar
       "n8nChatUrl": "https://fluky-n8n.lembgk.easypanel.host/webhook/positivojuguetes",
+
       "metadata": {},
       "theme": {
+
+        // ── BOTÓN FLOTANTE ──────────────────────────────────────────
         "button": {
-          "backgroundColor": "#555353",
-          "right": 20,
-          "bottom": 20,
-          "size": 60,
+          "backgroundColor": "#555353",   // color de fondo del botón
+          "right": 20,                    // distancia al borde derecho (px)
+          "bottom": 20,                   // distancia al borde inferior (px)
+          "size": 60,                     // tamaño del botón (px)
           "iconColor": "#ffffff",
           "customIconSrc": "https://raw.githubusercontent.com/mflowsuite/reviews-mflowsuite/master/assets/logos/1776798530800-gemini_generated_image_snymssnymssnymss.png",
           "customIconSize": 100,
           "customIconBorderRadius": 50,
           "autoWindowOpen": {
-            "autoOpen": true,
-            "openDelay": 2
+            "autoOpen": true,             // true = se abre solo / false = espera clic
+            "openDelay": 2               // segundos antes de abrirse
           },
           "borderRadius": "rounded",
           "draggable": false
         },
+
+        // ── TOOLTIP (globito arriba del botón) ──────────────────────
         "tooltip": {
           "showTooltip": true,
-          "tooltipMessage": "🦁¿Te ayudo?🐯",
+          "tooltipMessage": "🦁¿Te ayudo?🐯",   // texto del globito
           "tooltipBackgroundColor": "#D73135",
           "tooltipTextColor": "#ffffff",
           "tooltipFontSize": 15,
-          "hideTooltipOnMobile": false
+          "hideTooltipOnMobile": false           // true = ocultar en celular
         },
+
+        // ── ESTILOS DE LOS BOTONES DE PRODUCTO — NO tocar ──────────
         "customCSS": "button.qr-btn { display: inline-block; background: rgba(255,255,255,0.92) !important; border: none !important; color: #D73135 !important; padding: 5px 14px !important; border-radius: 16px !important; font-size: 13px !important; font-weight: 600 !important; cursor: pointer !important; margin-top: 6px !important; font-family: inherit !important } button.qr-btn:hover { background: #ffffff !important }",
+
         "direction": "ltr",
         "allowProgrammaticMessage": true,
-        "consentScreen": {
-          "enabled": false,
-          "title": "User Agreement",
-          "message": "By using this chatbot, you agree to our\n<p><a href='/terms' target='_blank' style='color: black; text-decoration: underline; text-decoration-color: black;'>Terms & Conditions</a></p>",
-          "textColor": "#1e1e1f",
-          "acceptButtonColor": "#f36539",
-          "acceptButtonTextColor": "#ffffff",
-          "acceptButtonText": "Agree & Start Chatting",
-          "backgroundColor": "#ffffff",
-          "backdropColor": "#00000"
-        },
+        "consentScreen": { "enabled": false },
+
+        // ── VENTANA DEL CHAT ────────────────────────────────────────
         "chatWindow": {
           "borderRadiusStyle": "rounded",
           "avatarBorderRadius": 35,
           "messageBorderRadius": 30,
           "showTitle": true,
-          "title": "👋Soy Tali asistente virtual de Positivo Juguetes",
+          "title": "👋Soy Tali asistente virtual de Positivo Juguetes",  // título arriba del chat
           "titleAvatarSrc": "https://raw.githubusercontent.com/mflowsuite/reviews-mflowsuite/master/assets/logos/1776798530800-gemini_generated_image_snymssnymssnymss.png",
           "avatarSize": 40,
-          "welcomeMessage": "🐯Diseñamos y fabricamos🙉 juegos 🦁para compartir momentos🐒 divertidos!😻",
-          "errorMessage": "Ups...Error!",
+          "welcomeMessage": "🐯Diseñamos y fabricamos🙉 juegos 🦁para compartir momentos🐒 divertidos!😻",  // primer mensaje que ve el usuario
+          "errorMessage": "Ups...Error!",   // mensaje si falla la conexión
           "backgroundColor": "#ffffff",
-          "height": 600,
-          "width": 400,
+          "height": 600,                    // alto del chat (px)
+          "width": 400,                     // ancho del chat (px)
           "fontSize": 16,
+
+          // ── BOTONES DE INICIO RÁPIDO ──────────────────────────────
+          // Aparecen como sugerencias al abrir el chat
           "starterPrompts": [
             "❤️¿Quiero hacer una Compra?",
             "🏃‍♂️‍➡️¿Donde esta mi pedido?"
           ],
           "starterPromptFontSize": 15,
+
           "renderHTML": true,
           "clearChatOnReload": true,
           "showScrollbar": true,
+
+          // ── MENSAJES DEL BOT ──────────────────────────────────────
           "botMessage": {
-            "backgroundColor": "#D73135",
-            "textColor": "#fafafa",
+            "backgroundColor": "#D73135",  // color de fondo del globo del bot
+            "textColor": "#fafafa",        // color del texto del bot
             "showAvatar": true,
             "avatarSrc": "https://raw.githubusercontent.com/mflowsuite/reviews-mflowsuite/master/assets/logos/1776798530800-gemini_generated_image_snymssnymssnymss.png",
             "showCopyToClipboardIcon": true
           },
+
+          // ── MENSAJES DEL USUARIO ──────────────────────────────────
           "userMessage": {
-            "backgroundColor": "#D73135",
+            "backgroundColor": "#D73135",  // color de fondo del globo del usuario
             "textColor": "#050505",
             "showAvatar": true,
             "avatarSrc": "https://www.svgrepo.com/show/532363/user-alt-1.svg"
           },
+
+          // ── CAMPO DE TEXTO ────────────────────────────────────────
           "textInput": {
-            "placeholder": "Escribe tu pregunta🐣",
+            "placeholder": "Escribe tu pregunta🐣",  // texto de ayuda en el campo
             "backgroundColor": "#ffffff",
             "textColor": "#1e1e1f",
-            "sendButtonColor": "#D73135",
+            "sendButtonColor": "#D73135",   // color del botón enviar
             "maxChars": 5000,
             "maxCharsWarningMessage": "You exceeded the characters limit. Please input less than 50 characters.",
             "autoFocus": true,
             "borderRadius": 6,
             "sendButtonBorderRadius": 50
           },
+
+          // ── PIE DEL CHAT — NO tocar ───────────────────────────────
           "footer": {
             "isCustomTextEnabled": true,
-            "customText": "<div style=\"text-align:center; margin-top:8px;\">\r\n  <small style=\"display:inline-flex; align-items:center; gap:4px;\">\r\n    <span style=\"opacity:0.6;\">Powered by</span>\r\n    <img src=\"https://dcdn-us.mitiendanube.com/stores/006/912/635/products/mflowsuite-1x1-otra-ec3d467fe5c5f2d79b17725707529550-1024-1024.jpg\" \r\n         alt=\"MFlowSuite\" \r\n         style=\"width:30px; height:30px; border-radius:50%; vertical-align:middle;\">\r\n    <strong style=\"opacity:0.6;\">MFlowSuite</strong>\r\n  </small>\r\n</div>"
+            "customText": "<div style=\"text-align:center; margin-top:8px;\"><small style=\"display:inline-flex; align-items:center; gap:4px;\"><span style=\"opacity:0.6;\">Powered by</span><img src=\"https://dcdn-us.mitiendanube.com/stores/006/912/635/products/mflowsuite-1x1-otra-ec3d467fe5c5f2d79b17725707529550-1024-1024.jpg\" alt=\"MFlowSuite\" style=\"width:30px; height:30px; border-radius:50%; vertical-align:middle;\"><strong style=\"opacity:0.6;\">MFlowSuite</strong></small></div>"
           }
         }
       }
     });
   </script>
+
+  <!-- Script de botones de producto — NO tocar -->
   <script>
     (function () {
       function processButtons(msgEl) {
@@ -168,7 +190,6 @@
           btn.addEventListener('click', () => window.Chatbot.sendMessage(btn.dataset.qr));
         });
       }
-
       setInterval(() => {
         const shadow = document.querySelector('n8nchatui-popup')?.shadowRoot;
         if (shadow) shadow.querySelectorAll('.n8n-chat-ui-bot-message').forEach(processButtons);
